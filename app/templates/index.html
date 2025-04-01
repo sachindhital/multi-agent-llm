@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Agent Blog Generator</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        img { max-width: 100%; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <h1>Multi-Agent Blog Generator</h1>
+    <form method="post">
+        <label>Trending Topic:</label><br>
+        <input type="text" name="topic" placeholder="e.g. AI in Education" required><br><br>
+
+        <label>Trend Breakdown (optional):</label><br>
+        <textarea name="breakdown" placeholder="e.g. 200K+ searches, rising in AU" rows="4" cols="50"></textarea><br><br>
+
+        <button type="submit">Generate</button>
+    </form>
+
+    {% if blog %}
+        <hr>
+        <h2>📝 Blog Content</h2>
+        <div>{{ blog|safe }}</div>
+
+        {% if image_urls %}
+            <hr>
+            <h2>🖼️ Generated Images</h2>
+            {% for url in image_urls %}
+                <img src="{{ url }}" alt="Generated image">
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+</body>
+</html>

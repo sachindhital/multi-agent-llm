@@ -1,0 +1,15 @@
+Multi-Agent-LLM/
+├── llm/
+│   ├── agents/
+│   │   ├── planner.py         # Planner agent class
+│   │   ├── writer.py          # Writer agent class
+│   │   └── editor.py          # Editor agent class
+│   ├── core/
+│   │   ├── generator.py       # Crew + Task orchestration
+│   ├── app/
+│   │   ├── flask_app.py       # Flask frontend
+│   │   └── templates/
+│   │       └── index.html
+│   ├── blog_api.py            # FastAPI logic
+│   ├── utils.py               # API key, common tools
+│   └── .env

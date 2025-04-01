@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Agent Blog Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f6f6f6;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 2rem;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .blog-output {
+            margin-top: 2rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Agent Blog Generator</h1>
+        <form method="post">
+            <label>Trending Topic:</label><br>
+            <input type="text" name="topic" placeholder="e.g. Taylor Swift" required><br><br>
+            
+            <label>Trend Breakdown (optional):</label><br>
+            <textarea name="breakdown" placeholder="e.g. 200K+ searches, rising in AU" rows="4" cols="50"></textarea><br><br>
+                        <button type="submit">Generate</button>
+        </form>
+
+        {% if blog %}
+            <div class="blog-output">
+                {{ blog | safe }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

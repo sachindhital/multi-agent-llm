@@ -1,0 +1,29 @@
+# Bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Environments
+.env
+.venv/
+env/
+venv/
+llm/Lib/
+llm/Scripts/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb~
+
+# VSCode & JetBrains
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Image output folders
+generated_images/
